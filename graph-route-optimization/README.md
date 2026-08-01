@@ -210,8 +210,6 @@ Select an option, follow the prompts, and the result (a computed path, a list of
 
 ### Live Route Optimization & Traversal Results
 ![Working Results](images/Working.png)
-```
-
 ---
 
 ## Future Enhancements

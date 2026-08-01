@@ -197,17 +197,19 @@ Select an option, follow the prompts, and the result (a computed path, a list of
 
 ## Screenshots
 
-> _Add screenshots of the running application here._
+## 📸 Application Interface & Visualizer
 
-```
-[ Screenshot: Application startup and main menu ]
+### Landing Page
+![Landing Page](images/LandingPage.png.jpg)
 
-[ Screenshot: Adding a city and a route ]
+### Route Parameters & Dashboard
+![Route Dashboard](images/Route.png.jpg)
 
-[ Screenshot: Shortest path result (Dijkstra vs. A*) ]
+### Multi-Algorithm Selection Engine
+![Algorithm Selection](images/AlgorithmSelection.png.jpg)
 
-[ Screenshot: MySQL Workbench showing the populated schema ]
-```
+### Live Route Optimization & Traversal Results
+![Working Results](images/Working.png.jpg)
 
 ---
 

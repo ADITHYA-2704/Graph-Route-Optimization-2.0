@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Optimization System</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Animated Neon Ambient Lights -->
+<div class="bg-spotlight"></div>
+<div class="bg-glow glow-1"></div>
+<div class="bg-glow glow-2"></div>
+<div class="bg-glow glow-3"></div>
+
+<div class="app-container">
+
+    <!-- Navigation Header -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="brand" onclick="switchView('hero')" role="button" tabindex="0" aria-label="Go to Home page">
+            <div class="logo-box">
+                <i class="fa-solid fa-route logo-icon icon-hover-fx"></i>
+            </div>
+            <div class="brand-text">
+                <h2>Route Optimizer <span class="version-tag">2.0 ULTRA</span></h2>
+                <span style="font-size: 0.8rem; color: #9ca3af; margin-left: 2px; font-weight: 400; display: inline-block;">by Adithya</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <button id="navHome" class="nav-btn active magnetic-btn" onclick="switchView('hero')" aria-label="Home page view">
+                <span class="magnetic-content"><i class="fa-solid fa-house icon-hover-fx"></i> <span>Home</span></span>
+            </button>
+            <button id="navVisualizer" class="nav-btn magnetic-btn" onclick="switchView('app')" aria-label="Visualizer page view">
+                <span class="magnetic-content"><i class="fa-solid fa-compass icon-hover-fx"></i> <span>Visualizer</span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 3D Transition Stage Viewport -->
+    <div class="views-stage">
+
+        <!-- VIEW 1: LANDING PAGE HERO -->
+        <header id="heroSection" class="view-page active-view">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span> High-Speed Graph Pathfinding Visualizer
+                </div>
+
+                <h1 class="hero-title" aria-label="Optimize Travel Routes with Intelligent Graph Algorithms">
+                    <span class="word-hover">Optimize</span>
+                    <span class="word-hover">Travel</span>
+                    <span class="word-hover">Routes</span>
+                    <span class="word-hover">with</span>
+                    <span class="word-hover gradient-text">Intelligent</span>
+                    <span class="word-hover gradient-text">Graph</span>
+                    <span class="word-hover watery-purple">Algorithms</span>
+                </h1>
+
+                <p class="hero-subtitle hover-glow-effect">
+                    Seamlessly compute and compare multi-city paths across India using Dijkstra, Bellman-Ford, A*, BFS, and DFS in real-time with zero backend latency.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn-hero-primary glowing-pulse ripple-btn magnetic-btn" onclick="switchView('app')">
+                            <span class="magnetic-content">
+                                <span>Launch Visualizer</span>
+                                <i class="fa-solid fa-arrow-right icon-hover-fx"></i>
+                            </span>
+                    </button>
+                </div>
+
+                <!-- Feature Showcase Grid -->
+                <div class="feature-grid">
+                    <div class="feature-card tilt-card">
+                        <div class="feature-icon cyan"><i class="fa-solid fa-diagram-project icon-hover-fx"></i></div>
+                        <h3>Multi-Algorithm Engine</h3>
+                        <p>Compare performance metrics across Dijkstra, Bellman-Ford, A*, BFS, and DFS algorithm implementations.</p>
+                    </div>
+                    <div class="feature-card tilt-card">
+                        <div class="feature-icon blue"><i class="fa-solid fa-map-location-dot icon-hover-fx"></i></div>
+                        <h3>Interactive Traversals</h3>
+                        <p>Step through exact city-to-city node transitions with smooth, staggered visual timeline animations.</p>
+                    </div>
+                    <div class="feature-card tilt-card">
+                        <div class="feature-icon purple"><i class="fa-solid fa-chart-line icon-hover-fx"></i></div>
+                        <h3>Real-Time Metrics</h3>
+                        <p>Instantly retrieve exact path distances in kilometers alongside node exploration counts.</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- VIEW 2: VISUALIZER DASHBOARD -->
+        <main id="appDashboard" class="view-page hidden-view">
+            <div class="main-content">
+
+                <!-- Left Panel: Form Controls -->
+                <section class="card input-card tilt-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fa-solid fa-sliders icon-hover-fx"></i></div>
+                        <h3>Route Parameters</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sourceCity">
+                            <i class="fa-solid fa-location-dot src-icon icon-hover-fx"></i> Source City
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="sourceCity" class="form-control" aria-label="Select source city">
+                                <option value="">Loading cities...</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down dropdown-icon icon-hover-fx" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <div class="swap-divider">
+                        <button id="swapBtn" class="magnetic-btn" type="button" title="Swap Source and Destination" onclick="swapCities()" aria-label="Swap source and destination cities">
+                            <span class="magnetic-content"><i class="fa-solid fa-arrows-rotate icon-hover-fx"></i></span>
+                        </button>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destinationCity">
+                            <i class="fa-solid fa-flag-checkered dest-icon icon-hover-fx"></i> Destination City
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="destinationCity" class="form-control" aria-label="Select destination city">
+                                <option value="">Loading cities...</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down dropdown-icon icon-hover-fx" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="algorithm">
+                            <i class="fa-solid fa-microchip algo-icon icon-hover-fx"></i> Optimization Algorithm
+                        </label>
+                        <div class="select-wrapper">
+                            <select id="algorithm" class="form-control" aria-label="Select pathfinding algorithm">
+                                <option value="dijkstra">Dijkstra's Algorithm (Shortest Path)</option>
+                                <option value="bellman-ford">Bellman-Ford Algorithm</option>
+                                <option value="a-star">A* Search Algorithm</option>
+                                <option value="bfs">Breadth-First Search (BFS)</option>
+                                <option value="dfs">Depth-First Search (DFS)</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down dropdown-icon icon-hover-fx" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <button id="findRouteBtn" onclick="findShortestRoute()" class="btn-submit ripple-btn magnetic-btn">
+                            <span class="magnetic-content">
+                                <span id="btnText"><i class="fa-solid fa-bolt icon-hover-fx"></i> Calculate Route</span>
+                                <span id="btnSpinner" class="spinner hidden" aria-label="Loading"></span>
+                            </span>
+                    </button>
+
+                    <div id="errorMessage" class="error-msg" role="alert"></div>
+                </section>
+
+                <!-- Right Panel: Output & Visualizer -->
+                <section class="card output-card tilt-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fa-solid fa-chart-line icon-hover-fx"></i></div>
+                        <h3>Optimization Results</h3>
+                    </div>
+
+                    <!-- Graph Canvas Visualizer -->
+                    <div class="canvas-container">
+                        <canvas id="graphCanvas"></canvas>
+                    </div>
+
+                    <!-- Empty State Placeholder -->
+                    <div id="placeholderState" class="empty-state">
+                        <div class="placeholder-glow">
+                            <i class="fa-solid fa-network-wired placeholder-icon icon-hover-fx"></i>
+                        </div>
+                        <p>Select departure and arrival cities to calculate an optimized route path.</p>
+                    </div>
+
+                    <!-- Skeleton Loading State -->
+                    <div id="skeletonLoader" class="skeleton-container hidden">
+                        <div class="skeleton-grid">
+                            <div class="skeleton-box shimmer"></div>
+                            <div class="skeleton-box shimmer"></div>
+                            <div class="skeleton-box shimmer"></div>
+                        </div>
+                        <div class="skeleton-line shimmer"></div>
+                        <div class="skeleton-line shimmer"></div>
+                    </div>
+
+                    <!-- Results Container -->
+                    <div id="resultContainer" class="result-box hidden" aria-live="polite" aria-atomic="true">
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <span class="metric-label">Total Distance</span>
+                                <div class="metric-value" id="totalDistance">0 km</div>
+                            </div>
+                            <div class="metric-card">
+                                <span class="metric-label">Nodes Visited</span>
+                                <div class="metric-value" id="visitedNodes">0</div>
+                            </div>
+                            <div class="metric-card">
+                                <span class="metric-label">Algorithm</span>
+                                <div class="metric-value highlight" id="activeAlgorithm">Dijkstra</div>
+                            </div>
+                        </div>
+
+                        <div class="path-visualizer">
+                            <h4>Route Traversal Sequence</h4>
+                            <div id="routeTimeline" class="timeline"></div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

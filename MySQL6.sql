@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM route_optimizer_db.cities;

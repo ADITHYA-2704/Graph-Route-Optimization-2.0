@@ -235,7 +235,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](./LICEN
 ## Author
 
 **[Your Name]**
-[GitHub](https://github.com/your-username) · [LinkedIn](https://linkedin.com/in/your-profile) · [Email](mailto:your.email@example.com)
+[GitHub](https://github.com/ADITHYA-2704) · [LinkedIn](https://www.linkedin.com/in/adithya-acharya-279612382/) · [Email](adithyaacharya004@gmail.com)
 
 ---
 

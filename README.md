@@ -200,16 +200,16 @@ Select an option, follow the prompts, and the result (a computed path, a list of
 ## 📸 Application Interface & Visualizer
 
 ### Landing Page
-![Landing Page](images/LandingPage.jpg)
+![Landing Page](images/LandingPage.png)
 
 ### Route Parameters & Dashboard
-![Route Dashboard](images/Route.jpg)
+![Route Dashboard](images/Route.png)
 
 ### Multi-Algorithm Selection Engine
-![Algorithm Selection](images/AlgorithmSelection.jpg)
+![Algorithm Selection](images/AlgorithmSelection.png)
 
 ### Live Route Optimization & Traversal Results
-![Working Results](images/Working.jpg)
+![Working Results](images/Working.png)
 
 ---
 

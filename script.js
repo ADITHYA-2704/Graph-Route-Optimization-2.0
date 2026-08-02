@@ -1,6 +1,5 @@
-const API_BASE_URL = "http://localhost:8081/api";
+const API_BASE_URL = "https://graph-route-optimization-20-production.up.railway.app/api";
 const routeCache = new Map();
-
 let canvas, ctx;
 let particles = [];
 let connectionDistance = 110;
